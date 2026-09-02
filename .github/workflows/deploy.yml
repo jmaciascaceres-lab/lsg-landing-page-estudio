@@ -12,6 +12,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Registrar la clave del host (evita el prompt interactivo de SSH)
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
+
       - name: Deploy vía rsync sobre SSH
         uses: burnett01/rsync-deployments@7.0.1
         with:
