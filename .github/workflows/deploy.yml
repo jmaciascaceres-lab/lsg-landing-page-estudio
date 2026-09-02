@@ -12,10 +12,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Registrar la clave del host (evita el prompt interactivo de SSH)
+      - name: Diagnóstico SSH (temporal)
         run: |
+          set +e
           mkdir -p ~/.ssh
-          ssh-keyscan -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
+          echo "== probando resolución DNS y conexión =="
+          getent hosts "${{ secrets.DEPLOY_HOST }}"
+          echo "== ssh-keyscan verbose =="
+          ssh-keyscan -v -T 10 -H "${{ secrets.DEPLOY_HOST }}"
+          echo "exit code de ssh-keyscan: $?"
 
       - name: Deploy vía rsync sobre SSH
         uses: burnett01/rsync-deployments@7.0.1
