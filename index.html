@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LifeSync-Games (LSG) | Estudio USACH - InTeractiOn Research Lab</title>
+<meta name="description" content="Participa en el estudio LifeSync-Games (LSG) del InTeractiOn Research Lab, USACH, sobre videojuegos, actividad fisica y bienestar fisico-mental.">
+<style>
+  :root{
+    --cream:#FBF6D8;
+    --red:#E2543F;
+    --orange:#F0A227;
+    --ink:#2B2B2B;
+    --muted:#6b6b5a;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height:1.6;
+  }
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  header{
+    padding:20px 0 0 0;
+  }
+  .topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:13px;
+    color:var(--muted);
+    padding-bottom:16px;
+  }
+  .brand{
+    font-weight:700;
+    letter-spacing:.5px;
+  }
+  .brand span{color:var(--red);}
+  .hero{
+    padding:24px 0 32px 0;
+    border-bottom:2px solid var(--red);
+  }
+  h1{
+    font-family:'Courier New', monospace;
+    font-weight:700;
+    letter-spacing:1px;
+    color:var(--red);
+    font-size:clamp(28px, 6vw, 44px);
+    margin:0 0 16px 0;
+    text-transform:uppercase;
+    line-height:1.25;
+  }
+  .lede{
+    font-size:18px;
+    max-width:56ch;
+    margin:0 0 24px 0;
+  }
+  .lede b{color:var(--red);}
+  .cta-row{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    align-items:center;
+  }
+  .btn-primary{
+    display:inline-block;
+    background:var(--red);
+    color:#fff;
+    font-weight:700;
+    font-size:16px;
+    padding:14px 28px;
+    border-radius:8px;
+    text-decoration:none;
+    box-shadow:0 3px 0 #a83a2a;
+  }
+  .btn-primary:active{transform:translateY(2px);box-shadow:0 1px 0 #a83a2a;}
+  .fine{font-size:13px;color:var(--muted);}
+  .badge-row{
+    display:flex;
+    gap:10px;
+    padding:16px 0 0 0;
+    flex-wrap:wrap;
+  }
+  .badge{
+    background:#fff;
+    border:1.5px solid var(--red);
+    color:var(--red);
+    font-size:12px;
+    font-weight:700;
+    padding:5px 12px;
+    border-radius:20px;
+  }
+  section{padding:36px 0;border-bottom:1px solid rgba(0,0,0,0.08);}
+  section:last-of-type{border-bottom:none;}
+  h2{
+    font-family:'Courier New', monospace;
+    font-size:20px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    margin:0 0 16px 0;
+  }
+  .req-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+    gap:12px;
+  }
+  .req-item{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    background:#fff;
+    border:1px solid rgba(0,0,0,0.1);
+    padding:14px 16px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:15px;
+  }
+  .check{
+    flex:0 0 auto;
+    width:20px;height:20px;
+    background:var(--red);
+    color:#fff;
+    border-radius:5px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:13px;
+    font-weight:800;
+  }
+  ul.steps{margin:0;padding-left:20px;}
+  ul.steps li{margin-bottom:10px;}
+  .not-implica ul{margin:0;padding-left:20px;}
+  .not-implica li{margin-bottom:8px;}
+  .qr-card{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    background:#fff;
+    border:2px dashed var(--red);
+    border-radius:12px;
+    padding:20px;
+    flex-wrap:wrap;
+  }
+  .qr-card img{
+    width:120px;height:120px;
+    flex:0 0 auto;
+  }
+  .qr-card .qr-text{font-size:14px;}
+  .qr-card a{color:var(--red);font-weight:700;word-break:break-all;}
+  .contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:16px;
+  }
+  .contact-card{
+    background:#fff;
+    border:1px solid rgba(0,0,0,0.1);
+    border-radius:8px;
+    padding:16px;
+    font-size:14px;
+  }
+  .contact-card .role{color:var(--muted);font-size:12.5px;}
+  .contact-card a{color:var(--red);font-weight:600;text-decoration:none;}
+  .cei{
+    font-size:12.5px;
+    color:var(--muted);
+    background:#fff;
+    border-left:3px solid var(--red);
+    padding:10px 14px;
+    margin-top:16px;
+  }
+  footer{
+    padding:24px 0 40px 0;
+    font-size:11.5px;
+    color:var(--muted);
+    line-height:1.5;
+  }
+  .footer-bar{
+    height:12px;
+    background:linear-gradient(90deg, var(--red), var(--orange));
+    margin-top:8px;
+  }
+  @media (max-width:520px){
+    .qr-card{flex-direction:column;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="topbar">
+      <span class="brand">InTeract<span>i</span>On Research Lab &middot; USACH</span>
+      <span>Informe Etico CEI-USACH N&deg; 231/2026</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <h1>&iquest;Juegas videojuegos<br>seguido?</h1>
+    <p class="lede">
+      &iquest;Qu&eacute; rol juegan los videojuegos en tu <b>bienestar f&iacute;sico y mental</b>?
+      Participa en <b>LifeSync-Games (LSG)</b>, el estudio del InTeractiOn Research Lab
+      (Depto. de Ingenier&iacute;a Inform&aacute;tica, USACH), y ayúdanos a averiguarlo.
+    </p>
+    <div class="cta-row">
+      <a class="btn-primary" href="https://forms.gle/rCC7Ku4FphNn7GJNA" target="_blank" rel="noopener">
+        Postular al estudio &rarr;
+      </a>
+      <span class="fine">Toma 2 minutos &middot; no te compromete a participar</span>
+    </div>
+    <div class="badge-row">
+      <span class="badge">100% confidencial</span>
+      <span class="badge">Puedes retirarte cuando quieras</span>
+      <span class="badge">Sin pagos en dinero</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section>
+    <h2>&iquest;Qu&eacute; es LifeSync-Games (LSG)?</h2>
+    <p>
+      Es un marco de investigaci&oacute;n desarrollado en el InTeractiOn Research Lab que conecta
+      datos de tu vida real &mdash;actividad f&iacute;sica, sue&ntilde;o y tareas cognitivas breves&mdash;
+      con la mec&aacute;nica de videojuegos, para explorar si esto apoya la autorregulaci&oacute;n del
+      tiempo de juego y el bienestar f&iacute;sico y mental.
+    </p>
+  </section>
+
+  <section>
+    <h2>&iquest;Puedes participar?</h2>
+    <div class="req-grid">
+      <div class="req-item"><span class="check">&#10003;</span> Tienes 18 a&ntilde;os o m&aacute;s</div>
+      <div class="req-item"><span class="check">&#10003;</span> Juegas videojuegos 3+ horas por semana</div>
+      <div class="req-item"><span class="check">&#10003;</span> Vives en la Regi&oacute;n Metropolitana</div>
+      <div class="req-item"><span class="check">&#10003;</span> Tienes laptop + smartphone con internet estable</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>&iquest;Qu&eacute; implica participar?</h2>
+    <ul class="steps">
+      <li>Duraci&oacute;n aproximada: 5 a 6 meses.</li>
+      <li>3 a 5 sesiones de juego libre por semana (30-45 min aprox.), algunas con el
+        sistema LSG conectado y otras sin conexi&oacute;n, para poder comparar.</li>
+      <li>Cuestionarios breves sobre h&aacute;bitos de juego, actividad f&iacute;sica y bienestar.</li>
+      <li>Mediciones r&aacute;pidas y no invasivas (ej.: frecuencia card&iacute;aca, peso, presi&oacute;n
+        arterial), y pruebas digitales breves de memoria y toma de decisiones.</li>
+      <li>Parte de las actividades requiere asistencia presencial en la Regi&oacute;n Metropolitana.</li>
+    </ul>
+  </section>
+
+  <section class="not-implica">
+    <h2>&iquest;Qu&eacute; NO implica?</h2>
+    <ul>
+      <li>No es un tratamiento m&eacute;dico ni una intervenci&oacute;n cl&iacute;nica.</li>
+      <li>No se te pedir&aacute; compartir diagn&oacute;sticos ni informaci&oacute;n m&eacute;dica sensible.</li>
+      <li>No hay pagos en dinero por participar.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Postula desde aqu&iacute;</h2>
+    <div class="qr-card">
+      <img src="data:image/png;base64,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" alt="QR formulario de interes LifeSync-Games">
+      <div class="qr-text">
+        Escanea el QR o entra directamente a<br>
+        <a href="https://forms.gle/rCC7Ku4FphNn7GJNA" target="_blank" rel="noopener">forms.gle/rCC7Ku4FphNn7GJNA</a><br>
+        Completar el formulario no te compromete a participar: solo nos permite
+        verificar requisitos y contactarte. Si corresponde, te enviaremos el
+        Consentimiento Informado completo antes de pedirte una decisi&oacute;n.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contacto</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="role">Doctorando / co-investigador</div>
+        <div><b>Joaqu&iacute;n Mac&iacute;as-C&aacute;ceres</b></div>
+        <div><a href="mailto:joaquin.macias@usach.cl">joaquin.macias@usach.cl</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="role">Investigador responsable</div>
+        <div><b>Roberto Gonz&aacute;lez-Ib&aacute;&ntilde;ez</b></div>
+        <div><a href="mailto:roberto.gonzalez.i@usach.cl">roberto.gonzalez.i@usach.cl</a></div>
+      </div>
+    </div>
+    <p class="cei">
+      Este proyecto cuenta con aprobaci&oacute;n del Comit&eacute; de &Eacute;tica Institucional USACH
+      (Informe N&deg; 231/2026). Tus datos se tratan de forma confidencial y anonimizada.
+    </p>
+  </section>
+
+  <footer>
+    Gonz&aacute;lez-Ib&aacute;&ntilde;ez, R., Mac&iacute;as-C&aacute;ceres, J., Villalta-Paucar, M. (2025).
+    LifeSync-Games: Toward a Video Game Paradigm for Promoting Responsible Gaming and Human Development.
+    arXiv preprint: 2510.19691 [cs.HC].
+    <div class="footer-bar"></div>
+  </footer>
+
+</div>
+
+</body>
+</html>
