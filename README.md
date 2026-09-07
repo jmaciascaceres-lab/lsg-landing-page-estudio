@@ -25,10 +25,10 @@ https://lsg.diinf.usach.cl/lsg-estudio/
 
 ```
 .
-├── index.html                       # la landing completa (HTML+CSS inline, sin JS)
+├── index.html          # la landing completa (HTML+CSS inline, sin JS)
 ├── README.md
-├── DEPLOY.md                        # guía de despliegue (nginx, secrets, SSH)
-└── .github/workflows/deploy.yml     # CI/CD: push a main -> rsync a la VM de DIINF
+├── DEPLOY.md            # guía de despliegue manual
+└── scripts/deploy.sh    # git pull + copiar index.html (dos comandos, sin CI/CD)
 ```
 
 ## Editar contenido
@@ -47,16 +47,10 @@ el Google Form, y este `index.html`.
 
 ## Despliegue
 
-Push-based vía GitHub Actions: cada push a `main` dispara
-`.github/workflows/deploy.yml`, que hace `rsync` del contenido hacia la VM de DIINF
-sobre SSH (usando una llave dedicada guardada como secret del repo) y recarga nginx.
-
-Requiere que la VM acepte SSH entrante desde los runners de GitHub (IP dinámica, no
-fija) — si eso no es viable por firewall, ver la nota de self-hosted runner en
-`DEPLOY.md`.
-
-Guía completa (bloque nginx, generación/instalación de la llave SSH, secrets de
-GitHub, checklist de salida a producción) en [`DEPLOY.md`](./DEPLOY.md).
+Manual: `git pull` en la VM + copiar `index.html` al directorio que sirve nginx
+(`/var/www/lsg-estudio`). Se descartó CI/CD automático (tanto push-based por SSH
+como self-hosted runner) por ahora — ver el porqué y los dos comandos exactos en
+[`DEPLOY.md`](./DEPLOY.md).
 
 ## Créditos
 
