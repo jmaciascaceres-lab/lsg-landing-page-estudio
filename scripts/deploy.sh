@@ -20,8 +20,8 @@ echo "== git pull =="
 cd "$REPO_DIR"
 git pull origin main
 
-echo "== copiando index.html =="
-cp "$REPO_DIR/index.html" "$TARGET_DIR/index.html"
+echo "== copiando archivos .html =="
+cp "$REPO_DIR"/*.html "$TARGET_DIR"/
 
 echo "== listo =="
 echo "commit desplegado: $(git rev-parse --short HEAD)"
