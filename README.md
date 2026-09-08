@@ -54,7 +54,7 @@ como self-hosted runner) por ahora — ver el porqué y los dos comandos exactos
 
 ## Changelog
 
-### 2026-09-08
+### 2026-09-08 v1.0
 
 - Cambiar el titulo de "¿Juegas seguido videojuegos?" a "¿Juegas habitualmente videojuegos?" en index.html y
   afiche_LSG_vertical.html.
