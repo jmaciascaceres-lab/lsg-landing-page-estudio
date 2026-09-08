@@ -1,4 +1,4 @@
-# lsg-landing-page-estudio
+# Landing Page LifeSync-Games
 
 Landing page de convocatoria para el estudio experimental **LifeSync-Games (LSG)** —
 InTeractiOn Research Lab, Depto. de Ingeniería Informática, USACH.
@@ -52,8 +52,20 @@ Manual: `git pull` en la VM + copiar `index.html` al directorio que sirve nginx
 como self-hosted runner) por ahora — ver el porqué y los dos comandos exactos en
 [`DEPLOY.md`](./DEPLOY.md).
 
+## Changelog
+
+### 2026-09-08
+
+- Cambiar el titulo de "¿Juegas seguido videojuegos?" a "¿Juegas habitualmente videojuegos?" en index.html y
+  afiche_LSG_vertical.html.
+
 ## Créditos
 
-González-Ibáñez, R., Macías-Cáceres, J., Villalta-Paucar, M. (2025). LifeSync-Games:
-Toward a Video Game Paradigm for Promoting Responsible Gaming and Human Development.
-arXiv preprint: 2510.19691 [cs.HC].
+- [1] González-Ibáñez, R., Macías-Cáceres, J., Villalta-Paucar, M. (2025). LifeSync-Games: A Technical Note on a
+  Novel Framework for Video Game Development. 2025 44th International Conference of the Chilean Computer Science
+  Society (SCCC), Valparaiso, Chile, pp. 1-4, doi: 10.1109/SCCC67219.2025.11420722.<br>
+- [2] González-Ibáñez R., Macías-Cáceres J., Villalta-Paucar M., (2025). LifeSync-Games: Toward a Video Game
+  Paradigm for Promoting Responsible Gaming and Human Development. arXiv preprint: 2510.19691 [cs.HC].<br>
+- [3] Macías-Cáceres J., Gutiérrez-Vela F., Paderewski-Rodriguez P., González-Ibáñez, R., (2026). LifeSync-Games:
+  Signal-Driven Pervasive Game Design: The LifeSync-Games Framework as a Player Experience Integration Layer. arXiv
+  preprint: 2609.03169 [cs.HC].
